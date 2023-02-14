@@ -18,7 +18,7 @@ import {
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 
-const LoginScreen = () => {
+const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [focusEmail, setIsFocusEmail] = useState(false);
 
@@ -152,7 +152,9 @@ const LoginScreen = () => {
                   <TouchableOpacity style={styles.button} onPress={onLogin}>
                     <Text style={styles.textButton}>Войти</Text>
                   </TouchableOpacity>
-                  <TouchableOpacity>
+                  <TouchableOpacity
+                    onPress={() => navigation.navigate("Register")}
+                  >
                     <Text style={styles.footer}>
                       Нет аккаунта? Зарегистрироваться
                     </Text>

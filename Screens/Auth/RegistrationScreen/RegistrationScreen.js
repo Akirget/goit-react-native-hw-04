@@ -20,7 +20,7 @@ import * as SplashScreen from "expo-splash-screen";
 
 import Add from "../../../assets/images/add.svg";
 
-const RegistrationScreen = () => {
+const RegistrationScreen = ({ navigation }) => {
   const [login, setLogin] = useState("");
   const [focusLogin, setFocusLogin] = useState(false);
 
@@ -177,7 +177,9 @@ const RegistrationScreen = () => {
                   <TouchableOpacity style={styles.button} onPress={onLogin}>
                     <Text style={styles.buttonText}>Зарегистрироваться</Text>
                   </TouchableOpacity>
-                  <TouchableOpacity>
+                  <TouchableOpacity
+                    onPress={() => navigation.navigate("Login")}
+                  >
                     <Text style={styles.footer}>Уже есть аккаунт? Войти</Text>
                   </TouchableOpacity>
                 </View>
