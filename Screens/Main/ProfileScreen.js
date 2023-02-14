@@ -127,7 +127,7 @@ export const ProfileScreen = ({ navigation }) => {
                 <View style={styles.row}>
                   <TouchableOpacity
                     style={styles.statisticWrap}
-                    onPress={() => navigation.navigate("Comments")}
+                    onPress={() => navigation.navigate("Комментарии")}
                   >
                     <Message />
                     <Text style={styles.statisticText}>{item.comments}</Text>

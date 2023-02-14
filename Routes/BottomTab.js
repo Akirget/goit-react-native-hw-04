@@ -19,29 +19,15 @@ export const BottomMenu = ({ navigation }) => {
     <BottomTab.Navigator
       screenOptions={{
         tabBarShowLabel: false,
-        tabBarStyle: { height: 63, justifyContent: "center" },
+
         headerTitleAlign: "center",
-        headerStyle: { height: 68 },
-        headerShadowVisible: {
-          elevation: 1,
-          backgroundColor: "#FFFFFF",
-          shadowColor: "#000000",
-          shadowOffset: { width: 0, height: 0.5 },
-          shadowOpacity: 0.3,
-          shadowRadius: 27.18,
-        },
-        headerTitleStyle: {
-          marginBottom: 11,
-          fontSize: 17,
-          lineHeight: 22,
-          color: "#212121",
-        },
+
         headerRightContainerStyle: { paddingRight: 16, paddingBottom: 9 },
         headerLeftContainerStyle: { paddingLeft: 16, paddingBottom: 9 },
       }}
     >
       <BottomTab.Screen
-        name="Posts"
+        name="Публикации"
         component={PostsScreen}
         options={{
           headerShown: true,
@@ -75,7 +61,6 @@ export const BottomMenu = ({ navigation }) => {
         name="Создать публикацию"
         component={CreatePostsScreen}
         options={{
-          headerShown: true,
           tabBarStyle: { display: "none" },
           tabBarIcon: ({ focused, size, color }) => (
             <View
