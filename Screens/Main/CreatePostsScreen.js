@@ -16,7 +16,7 @@ import {
 
 import Location from "../../assets/images/postImg/location.svg";
 import AddPhoto from "../../assets/images/addPhoto.svg";
-import Trash from "../../assets/images/trash.svg";
+import Delete from "../../assets/images/delete.svg";
 
 export const CreatePostsScreen = ({ navigation }) => {
   const [windowWidth, setWindowWidth] = useState(
@@ -169,7 +169,7 @@ export const CreatePostsScreen = ({ navigation }) => {
             onPress={onDelete}
             disabled={isDelete}
           >
-            <Trash stroke={isDelete ? "#BDBDBD" : "#FFFFFF"} />
+            <Delete stroke={isDelete ? "#BDBDBD" : "#FFFFFF"} />
           </TouchableOpacity>
         </View>
       </ScrollView>

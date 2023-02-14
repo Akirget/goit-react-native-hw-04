@@ -14,7 +14,7 @@ import {
   Keyboard,
 } from "react-native";
 
-import Send from "../../assets/images/send.svg";
+import Top from "../../assets/images/top.svg";
 import { TextInput } from "react-native-gesture-handler";
 
 import { commentPostArray } from "../../data/posts";
@@ -101,7 +101,7 @@ export const CommentsScreen = () => {
                 onChangeText={commentHandler}
               ></TextInput>
               <TouchableOpacity style={styles.sendButton} onPress={onSend}>
-                <Send style={{ width: 34, height: 34 }} />
+                <Top />
               </TouchableOpacity>
             </View>
           }

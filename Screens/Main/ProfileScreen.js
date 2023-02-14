@@ -85,7 +85,7 @@ export const ProfileScreen = ({ navigation }) => {
               >
                 <Image
                   style={styles.imageAvatar}
-                  source={require("../../assets/images/userAvatarLarge.jpg")}
+                  source={require("../../assets/images/userAvatarBig.jpg")}
                 />
               </View>
               <View
