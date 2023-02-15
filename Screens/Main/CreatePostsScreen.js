@@ -150,7 +150,6 @@ export const CreatePostsScreen = ({ navigation }) => {
               backgroundColor: isDisabledPublish ? "#F6F6F6" : "#FF6C00",
             }}
             onPress={onPublish}
-            disabled={isDisabledPublish}
           >
             <Text
               style={{
@@ -228,14 +227,13 @@ const styles = StyleSheet.create({
   button: {
     height: 40,
     marginTop: 30,
-    paddingVertical: 15,
+    paddingVertical: 10,
     borderRadius: 100,
   },
   textButton: {
     fontSize: 16,
     lineHeight: 19,
     textAlign: "center",
-    color: "#BDBDBD",
     fontFamily: "Roboto",
   },
   deleteImg: {
