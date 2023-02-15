@@ -167,7 +167,6 @@ export const CreatePostsScreen = ({ navigation }) => {
               backgroundColor: isDelete ? "#F6F6F6" : "#FF6C00",
             }}
             onPress={onDelete}
-            disabled={isDelete}
           >
             <Delete stroke={isDelete ? "#BDBDBD" : "#FFFFFF"} />
           </TouchableOpacity>
@@ -227,8 +226,8 @@ const styles = StyleSheet.create({
     bottom: 16,
   },
   button: {
-    height: 50,
-    marginTop: 32,
+    height: 40,
+    marginTop: 30,
     paddingVertical: 15,
     borderRadius: 100,
   },

@@ -83,7 +83,7 @@ export const CommentsScreen = () => {
         <FlatList
           showsVerticalScrollIndicator={false}
           ListHeaderComponent={
-            <View style={{ ...styles.container, width: windowWidth - 16 * 2 }}>
+            <View style={{ ...styles.container, width: windowWidth - 32 }}>
               <Image
                 style={styles.commentImage}
                 source={require("../../assets/images/sunset.jpg")}
@@ -91,7 +91,7 @@ export const CommentsScreen = () => {
             </View>
           }
           ListFooterComponent={
-            <View style={{ width: "100%", marginBottom: 32 }}>
+            <View style={{ marginBottom: 32 }}>
               <TextInput
                 value={comment}
                 style={styles.input}
@@ -105,13 +105,13 @@ export const CommentsScreen = () => {
               </TouchableOpacity>
             </View>
           }
-          contentContainerStyle={{ width: windowWidth - 16 * 2 }}
+          contentContainerStyle={{ width: windowWidth - 32 }}
           data={posts.commentsTexts}
           renderItem={({ item }) => (
             <View
               style={{
                 ...styles.commentWrapper,
-                width: windowWidth - 16 * 2,
+                width: windowWidth - 32,
               }}
             >
               <Image
