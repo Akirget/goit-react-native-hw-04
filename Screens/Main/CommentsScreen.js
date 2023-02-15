@@ -8,10 +8,10 @@ import {
   Text,
   Dimensions,
   FlatList,
-  ScrollView,
   TouchableOpacity,
   Alert,
   Keyboard,
+  SafeAreaView,
 } from "react-native";
 
 import Top from "../../assets/images/top.svg";
@@ -75,65 +75,58 @@ export const CommentsScreen = () => {
   }
 
   return (
-    <View
+    <SafeAreaView
+      style={{ ...styles.container, height: "100%" }}
       onLayout={onLayoutRootView}
-      style={{ backgroundColor: "#FFFFFF", alignItems: "center" }}
     >
-      <View style={{ width: windowWidth - 32 }}>
-        <FlatList
-          showsVerticalScrollIndicator={false}
-          ListHeaderComponent={
-            <View style={{ ...styles.container, width: windowWidth - 32 }}>
-              <Image
-                style={styles.commentImage}
-                source={require("../../assets/images/sunset.jpg")}
-              />
-            </View>
-          }
-          ListFooterComponent={
-            <View style={{ marginBottom: 32 }}>
-              <TextInput
-                value={comment}
-                style={styles.input}
-                placeholder="Комментировать..."
-                cursorColor={"#BDBDBD"}
-                placeholderTextColor={"#BDBDBD"}
-                onChangeText={commentHandler}
-              ></TextInput>
-              <TouchableOpacity style={styles.sendButton} onPress={onSend}>
-                <Top />
-              </TouchableOpacity>
-            </View>
-          }
-          contentContainerStyle={{ width: windowWidth - 32 }}
-          data={posts.commentsTexts}
-          renderItem={({ item }) => (
+      <FlatList
+        data={posts.commentsTexts}
+        style={{ backgroundColor: "#FFFFFF" }}
+        ListHeaderComponent={
+          <View style={styles.containerHeader}>
+            <Image
+              style={styles.commentImage}
+              source={require("../../assets/images/sunset.jpg")}
+            />
+          </View>
+        }
+        renderItem={({ item }) => (
+          <View
+            style={{
+              ...styles.commentWrapper,
+              width: windowWidth - 32,
+            }}
+          >
+            <Image source={item.userAvatar} style={styles.commentAvatarImage} />
             <View
               style={{
-                ...styles.commentWrapper,
-                width: windowWidth - 32,
+                ...styles.textWrapper,
+                width: windowWidth - 28 - 16 * 3,
               }}
             >
-              <Image
-                source={item.userAvatar}
-                style={styles.commentAvatarImage}
-              />
-              <View
-                style={{
-                  ...styles.textWrapper,
-                  width: windowWidth - 28 - 16 * 3,
-                }}
-              >
-                <Text style={styles.commentText}>{item.text}</Text>
-                <Text style={styles.commentDate}>
-                  {item.date} | {item.time}
-                </Text>
-              </View>
+              <Text style={styles.commentText}>{item.text}</Text>
+              <Text style={styles.commentDate}>
+                {item.date} | {item.time}
+              </Text>
             </View>
-          )}
-        />
+          </View>
+        )}
+        keyExtractor={(item) => item.id}
+      />
+      <View>
+        <TextInput
+          value={comment}
+          style={styles.input}
+          placeholder="Комментировать..."
+          cursorColor={"#BDBDBD"}
+          placeholderTextColor={"#BDBDBD"}
+          onChangeText={commentHandler}
+        ></TextInput>
+        <TouchableOpacity style={styles.sendButton} onPress={onSend}>
+          <Top />
+        </TouchableOpacity>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -141,13 +134,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    marginTop: 32,
+    width: "100%",
     backgroundColor: "#FFFFFF",
     alignItems: "center",
   },
+
   commentImage: {
     width: "100%",
-    marginBottom: 31,
+    marginBottom: 30,
     borderRadius: 8,
   },
   commentWrapper: {
@@ -180,11 +174,12 @@ const styles = StyleSheet.create({
     color: "#BDBDBD",
   },
   input: {
-    marginTop: 7,
+    marginTop: 30,
+    marginBottom: 10,
     paddingHorizontal: 16,
     paddingTop: 16,
     paddingBottom: 15,
-    width: "100%",
+    width: 340,
     height: 50,
     backgroundColor: "#F6F6F6",
     borderWidth: 1,
@@ -193,7 +188,7 @@ const styles = StyleSheet.create({
   },
   sendButton: {
     position: "absolute",
-    top: 15,
-    right: 8,
+    right: 15,
+    bottom: 15,
   },
 });
