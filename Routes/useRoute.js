@@ -1,11 +1,11 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 
-import { RegistrationScreen } from "../Screens/Auth/RegistrationScreen/RegistrationScreen";
-import { LoginScreen } from "../Screens/Auth/LoginScreen/LoginScreen";
 import { CommentsScreen } from "../Screens/Main/CommentsScreen";
 import { MapScreen } from "../Screens/Main/MapScreen";
 import { Home } from "../Screens/Main/Home";
+import RegistrationScreen from "./../Screens/Auth/RegistrationScreen/RegistrationScreen";
+import LoginScreen from "./../Screens/Auth/LoginScreen/LoginScreen";
 
 const AuthStack = createStackNavigator();
 const MainStack = createStackNavigator();
@@ -37,7 +37,7 @@ export const useRoute = (isLogin) => {
     <AuthStack.Navigator initialRouteName="Login">
       <AuthStack.Screen
         options={{ headerShown: false }}
-        name="Registration"
+        name="Register"
         component={RegistrationScreen}
       ></AuthStack.Screen>
       <AuthStack.Screen

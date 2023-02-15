@@ -73,7 +73,6 @@ const RegistrationScreen = ({ navigation }) => {
   const [fonts] = useFonts({
     RobotoBold: require("../../../assets/fonts/Roboto-Bold.ttf"),
     RobotoRegular: require("../../../assets/fonts/Roboto-Regular.ttf"),
-    // RobotoMono: require("../../../assets/fonts/RobotoMono-Italic-VariableFont_wght.ttf"),
   });
 
   const onLayoutRootView = useCallback(async () => {
