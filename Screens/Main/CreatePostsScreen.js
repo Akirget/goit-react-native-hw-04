@@ -198,6 +198,7 @@ const styles = StyleSheet.create({
   },
   contantTitle: {
     width: "100%",
+
     lignItems: "flex-start",
   },
   text: {
