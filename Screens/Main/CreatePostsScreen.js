@@ -16,7 +16,7 @@ import {
 
 import Location from "../../assets/images/postImg/location.svg";
 import AddPhoto from "../../assets/images/addPhoto.svg";
-import Delete from "../../assets/images/delete.svg";
+import Delete from "../../assets/images/trash.svg";
 
 export const CreatePostsScreen = ({ navigation }) => {
   const [windowWidth, setWindowWidth] = useState(
